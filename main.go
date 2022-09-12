@@ -8,8 +8,13 @@ import (
 
 func main() {
 
-	input := "x=a+(b*c){,};"
-	
+	input := `let five = 5;
+	let ten = 10;
+	let add = fn(x, y) {
+	x + y;
+	};
+	let result = add(five, ten);`
+
 	lex := lexer.New(input)
 	for {
 		tok := lex.NextToken()
