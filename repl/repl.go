@@ -32,7 +32,7 @@ func Start(input io.Reader, output io.Writer) {
 		lex := lexer.New(line)
 
 		for tok := lex.NextToken(); tok.Type != token.EOF; tok = lex.NextToken() {
-			fmt.Fprintf(output, "%+v\n", tok)
+			fmt.Fprintf(output, "%v %s\n", tok.Type, tok.Literal)
 		}
 
 	}
