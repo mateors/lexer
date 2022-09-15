@@ -4,13 +4,18 @@ import (
 	"fmt"
 	"log"
 	"mastercode/lexer"
+	"mastercode/parser"
 	"mastercode/repl"
-	"mastercode/token"
 	"os"
 	"os/user"
+
+	//"mastercode/repl"
+	"mastercode/token"
+	//"os"
+	//"os/user"
 )
 
-func manualTest() {
+func lexerManualTest() {
 	input := `let five = 5;
 	let ten = 10;
 	let add = fn(x, y) {
@@ -39,6 +44,27 @@ func manualTest() {
 	}
 }
 
+func parserManualTest() {
+
+	input := `
+	let x = 5;
+	let y = 10;
+	let foobar = 838383;`
+
+	l := lexer.New(input)
+	p := parser.New(l)
+
+	program := p.ParseProgram()
+	if program == nil {
+		log.Fatal("Parse program returned nil")
+	}
+
+	//fmt.Println(program.Statements, program.TokenLiteral())
+	if len(program.Statements) != 3 {
+		log.Fatalf("Program statement does not contains 3 statements, got %d", len(program.Statements))
+	}
+}
+
 func main() {
 
 	user, err := user.Current()
@@ -49,4 +75,5 @@ func main() {
 	fmt.Printf("Hello %s, Welcome to the REPL:\n", user.Username)
 	fmt.Printf("Feel free to type in commands\n")
 	repl.Start(os.Stdin, os.Stdout)
+
 }
