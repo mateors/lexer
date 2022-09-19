@@ -27,7 +27,7 @@ func (p *Parser) nextToken() {
 
 func (p *Parser) ParseProgram() *ast.Program {
 
-	program := &ast.Program{}
+	program := &ast.Program{} //root node
 	program.Statements = []ast.Statement{}
 
 	for p.curToken.Type != token.EOF {
