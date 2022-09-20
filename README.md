@@ -88,8 +88,36 @@ Each token type can have up to two parsing functions associated with it, dependi
 
 ## Table-driven testing approach
 
+### when parsing the expression statement `-1 * 2 + 3`
+
+```
+BEGIN parseExpressionStatement
+        BEGIN parseExpression
+                BEGIN parsePrefixExpression
+                        BEGIN parseExpression
+                                BEGIN parseIntegerLiteral
+                                END parseIntegerLiteral
+                        END parseExpression
+                END parsePrefixExpression
+                BEGIN parseInfixExpression
+                        BEGIN parseExpression
+                                BEGIN parseIntegerLiteral
+                                END parseIntegerLiteral
+                        END parseExpression
+                END parseInfixExpression
+                BEGIN parseInfixExpression
+                        BEGIN parseExpression
+                                BEGIN parseIntegerLiteral
+                                END parseIntegerLiteral
+                        END parseExpression
+                END parseInfixExpression
+        END parseExpression
+END parseExpressionStatement
+```
+
 ## Testing our lexer
 * `go test ./lexer/`
 * `go test ./ast/`
 * `go test ./parser/`
 * `go test -run TestOperatorPrecedenceParsing ./parser/`
+* `go test -v -run TestOperatorPrecedenceParsing ./parser/`
