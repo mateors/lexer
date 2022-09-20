@@ -42,5 +42,9 @@ Without a compiler or an interpreter a programming language is nothing more than
 * foo * bar / foobar
 * add(foo, bar)
 
+## if expressions
+* `let result = if (10 > 5) { true } else { false };`
+* `result // => true`
+
 ## Testing our lexer
 > `go test ./lexer/`
