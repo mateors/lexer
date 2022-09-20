@@ -71,5 +71,13 @@ A crucial part of this idea is that each token type can have two parsing functio
 
 > Expression statement -> `x +5;`
 
+
+## Implementing the Pratt Parser
+A Pratt parser’s main idea is the association of parsing functions *(which Pratt calls "semantic code")* with token types.
+
+Each token type can have up to two parsing functions associated with it, depending on whether the token is found in a prefix or an infix position.
+
 ## Testing our lexer
-> `go test ./lexer/`
+* `go test ./lexer/`
+* `go test ./ast/`
+* `go test ./parser/`
