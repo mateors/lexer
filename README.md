@@ -77,7 +77,19 @@ A Pratt parser’s main idea is the association of parsing functions *(which Pra
 
 Each token type can have up to two parsing functions associated with it, depending on whether the token is found in a prefix or an infix position.
 
+## Prefix operator syntax
+> `<prefix operator><expression>;`
+*unary expressions*
+
+## Infix operator syntax
+> `<expression> <infix operator> <expression>;`
+*Because of the two operands (left and right) these expressions are sometimes called "binary expressions"*
+
+
+## Table-driven testing approach
+
 ## Testing our lexer
 * `go test ./lexer/`
 * `go test ./ast/`
 * `go test ./parser/`
+* `go test -run TestOperatorPrecedenceParsing ./parser/`
