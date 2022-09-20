@@ -65,5 +65,11 @@ And that is also the `main difference`: instead of associating parsing functions
 
 A crucial part of this idea is that each token type can have two parsing functions associated with it, depending on the token's position - `infix` or `prefix`.
 
+* The first thing we need to do for expression parsing is to prepare our AST.
+
+> Let statement -> `let x = 5 +5;`
+
+> Expression statement -> `x +5;`
+
 ## Testing our lexer
 > `go test ./lexer/`
