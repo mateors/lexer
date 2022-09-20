@@ -16,5 +16,31 @@ We're going to build our own **lexer**, our own parser, our own tree representat
 ## Why its important?
 Without a compiler or an interpreter a programming language is nothing more than an idea or a specification.
 
+## Parsing Expressions
+
+ ### Prefix operators
+ * -5
+ * !true
+ * !false
+
+ ### Infix operators (or "binary operators")
+ * 5 + 5
+ * 5 - 5
+ * 5 / 5
+ * 5 * 5
+
+### We can use parentheses to group expressions and influence the order of evaluation
+* 5 * (5 + 5)
+* ((5 + 5) * 5) * 5
+
+### There are call expressions:
+* add(2, 3)
+* add(add(2, 3), add(5, 10))
+* max(5, add(5, (5 * 5)))
+
+### Identifiers are expressions too:
+* foo * bar / foobar
+* add(foo, bar)
+
 ## Testing our lexer
 > `go test ./lexer/`
