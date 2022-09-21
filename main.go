@@ -5,11 +5,10 @@ import (
 	"log"
 	"mastercode/lexer"
 	"mastercode/parser"
-
-	//"mastercode/repl"
+	"mastercode/repl"
 	"mastercode/token"
-	//"os"
-	//"os/user"
+	"os"
+	"os/user"
 )
 
 func lexerManualTest() {
@@ -82,16 +81,16 @@ func parseExpressionManualTest() {
 
 func main() {
 
-	// user, err := user.Current()
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
+	user, err := user.Current()
+	if err != nil {
+		log.Fatal(err)
+	}
 
-	// fmt.Printf("Hello %s, Welcome to the REPL:\n", user.Username)
-	// fmt.Printf("Feel free to type in commands\n")
-	// repl.Start(os.Stdin, os.Stdout)
+	fmt.Printf("Hello %s, Welcome to the REPL:\n", user.Username)
+	fmt.Printf("Feel free to type in commands\n")
+	repl.Start(os.Stdin, os.Stdout)
 
 	//parserManualTest()
-	parseExpressionManualTest()
+	//parseExpressionManualTest()
 
 }

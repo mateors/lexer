@@ -67,9 +67,9 @@ A crucial part of this idea is that each token type can have two parsing functio
 
 * The first thing we need to do for expression parsing is to prepare our AST.
 
-> Let statement -> `let x = 5 +5;`
+> Let statement -> `let x = 5 + 5;`
 
-> Expression statement -> `x +5;`
+> Expression statement -> `x + 5;`
 
 
 ## Implementing the Pratt Parser
