@@ -120,4 +120,4 @@ END parseExpressionStatement
 * `go test ./ast/`
 * `go test ./parser/`
 * `go test -run TestOperatorPrecedenceParsing ./parser/`
-* `go test -v -run TestOperatorPrecedenceParsing ./parser/`
+* `go test -v -run TestOperatorPrecedenceParsing2 ./parser/`
