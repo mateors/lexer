@@ -90,6 +90,16 @@ Each token type can have up to two parsing functions associated with it, dependi
 * [Deep-dive-into-table-driven-testing](https://engineering.mercari.com/en/blog/entry/20211221-a-deep-dive-into-table-driven-testing-in-golang)
 * [gotests makes writing Go tests easy](https://github.com/cweill/gotests)
 
+### Here is what happens when we parse `1 + 2 + 3;`
+
+![parse 1](./screens/parse_1.png)
+
+![parse 2](./screens/parse_2.png)
+
+![parse 3](./screens/parse_3.png)
+
+![parse 4](./screens/parse_4.png)
+
 ### when parsing the expression statement `-1 * 2 + 3`
 
 ```
