@@ -87,6 +87,8 @@ Each token type can have up to two parsing functions associated with it, dependi
 
 
 ## Table-driven testing approach
+* [Deep-dive-into-table-driven-testing](https://engineering.mercari.com/en/blog/entry/20211221-a-deep-dive-into-table-driven-testing-in-golang)
+* [gotests makes writing Go tests easy](https://github.com/cweill/gotests)
 
 ### when parsing the expression statement `-1 * 2 + 3`
 
