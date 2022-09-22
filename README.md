@@ -169,6 +169,27 @@ That’s all we need to keep in mind when defining the AST node:
 ## Call Expressions structure
 * `<expression>( <comma separated expressions> )`
 
+## Evaluation
+A treewalking interpreter that recursively evaluates an AST is probably the slowest of all approaches, but easy to build, extend, reason about and as portable as the language it’s implemented in.
+
+An interpreter that compiles to bytecode and uses a virtual machine to evaluate said bytecode is going to be a lot faster. But more complicated and harder to build, too.
+
+## A Tree-Walking Interpreter
+> Executing the AST while traversing it. 
+
+We are going to build is a `tree-walking interpreter`. We are going to `take the AST` our parser builds for us `and interpret it` `"on the fly"`, without any preprocessing or compilation step.
+
+The design we are going to use is heavily inspired by the interpreter presented in `The Structure and Interpretation of Computer Programs` (SICP), especially its usage of environments.
+
+> Becase it's the easiest way to get started, it's easy to understand and to extend later on.
+
+### We only need two things really: 
+1. A tree-walking evaluator 
+2. A way to represent values in Golang (host language).
+
+* If you want to build a fast interpreter you can't get away with a slow and bloated object system.
+* And if you are going to write your own garbage collector, you need to think about how it will keep track of the values in the system.
+* If you don’t care about performance, then it does make sense to keep things simple and easy to understand until further requirements arise.
 
 ## Testing our lexer
 * `go test ./lexer/`
