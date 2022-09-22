@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"io"
 	"mastercode/lexer"
-	"mastercode/token"
+	"mastercode/parser"
 )
 
 //REPL = Read Eval Print Loop
@@ -30,11 +30,35 @@ func Start(input io.Reader, output io.Writer) {
 
 		line := scanner.Text()
 		lex := lexer.New(line)
+		p := parser.New(lex)
 
-		for tok := lex.NextToken(); tok.Type != token.EOF; tok = lex.NextToken() {
-			fmt.Fprintf(output, "%v %s\n", tok.Type, tok.Literal)
+		program := p.ParseProgram()
+		if len(p.Errors()) != 0 {
+			printParserErrors(output, p.Errors())
+			continue
 		}
+
+		io.WriteString(output, program.String())
+		io.WriteString(output, "\n")
+
+		// for tok := lex.NextToken(); tok.Type != token.EOF; tok = lex.NextToken() {
+		// 	fmt.Fprintf(output, "%v %s\n", tok.Type, tok.Literal)
+		// }
 
 	}
 
+}
+
+// func printParserErrors(out io.Writer, errors []string) {
+// 	for _, msg := range errors {
+// 		io.WriteString(out, "\t"+msg+"\n")
+// 	}
+// }
+
+func printParserErrors(out io.Writer, errors []string) {
+	io.WriteString(out, "Woops! We ran into some issues here!\n")
+	io.WriteString(out, " parser errors:\n")
+	for _, msg := range errors {
+		io.WriteString(out, "\t"+msg+"\n")
+	}
 }

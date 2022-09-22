@@ -105,7 +105,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	fmt.Printf("Hello %s, Welcome to the REPL:\n", user.Username)
+	fmt.Printf("Hello %s, Welcome to the REPL:\n", user.Username) //RPPL = Read-Parse-Print-Loop
 	fmt.Printf("Feel free to type in commands\n")
 	repl.Start(os.Stdin, os.Stdout)
 
