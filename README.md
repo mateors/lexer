@@ -135,6 +135,37 @@ Block statements are a series of statements enclosed by an opening `{` and a clo
 
 > *parsing is prone to off-by-one errors*
 
+## Structure of function literals
+
+### Function literals look like this:
+```
+fn(x, y) {
+return x + y;
+}
+```
+
+It starts with the keyword fn, followed by a list of parameters, followed by a block statement, which is the function’s body, that gets executed when the function is called. The abstract structure of a function literal is this:
+
+> `fn <parameters> <block statement>`
+
+### The parameters in function
+They are just a list of identifiers that are comma-separated and surrounded by parentheses:
+
+> `(<parameter one>, <parameter two>, <parameter three>, ...)`
+
+This list can also be empty:
+```
+fn() {
+return foobar + barfoo;
+}
+```
+
+### the two main parts of a function literals
+1. The list of parameters 
+2. The block statement that is the function's body. 
+
+That’s all we need to keep in mind when defining the AST node:
+
 ## Testing our lexer
 * `go test ./lexer/`
 * `go test ./ast/`
