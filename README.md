@@ -166,6 +166,10 @@ return foobar + barfoo;
 
 That’s all we need to keep in mind when defining the AST node:
 
+## Call Expressions structure
+* `<expression>( <comma separated expressions> )`
+
+
 ## Testing our lexer
 * `go test ./lexer/`
 * `go test ./ast/`
