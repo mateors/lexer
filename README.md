@@ -130,6 +130,11 @@ END parseExpressionStatement
 ## Block statements 
 Block statements are a series of statements enclosed by an opening `{` and a closing `}`
 
+## if-else conditional statement structure
+> `if (<condition>) <consequence> else <alternative>`
+
+> *parsing is prone to off-by-one errors*
+
 ## Testing our lexer
 * `go test ./lexer/`
 * `go test ./ast/`
