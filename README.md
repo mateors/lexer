@@ -191,6 +191,12 @@ The design we are going to use is heavily inspired by the interpreter presented 
 * And if you are going to write your own garbage collector, you need to think about how it will keep track of the values in the system.
 * If you don’t care about performance, then it does make sense to keep things simple and easy to understand until further requirements arise.
 
+
+## Structure of Eval (first version)
+> `func Eval(node ast.Node) object.Object`
+
+Eval will take an `ast.Node` as input and return an `object.Object`.
+
 ## Testing our lexer
 * `go test ./lexer/`
 * `go test ./ast/`
