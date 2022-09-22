@@ -79,6 +79,25 @@ func parseExpressionManualTest() {
 
 }
 
+func ATest() {
+
+	input := `
+	if (1>0){
+
+		let x=5;
+	}
+	`
+
+	lex := lexer.New(input)
+	for {
+		tok := lex.NextToken()
+		if tok.Type == token.EOF {
+			break
+		}
+		fmt.Println(tok.Type, tok.Literal)
+	}
+}
+
 func main() {
 
 	user, err := user.Current()

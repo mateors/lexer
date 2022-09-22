@@ -127,6 +127,9 @@ BEGIN parseExpressionStatement
 END parseExpressionStatement
 ```
 
+## Block statements 
+Block statements are a series of statements enclosed by an opening `{` and a closing `}`
+
 ## Testing our lexer
 * `go test ./lexer/`
 * `go test ./ast/`
