@@ -204,6 +204,8 @@ Eval will take an `ast.Node` as input and return an `object.Object`.
 1. Define an internal representation of functions in our object system 
 2. Add support for function calls to Eval.
 
+> Extending the environment
+
 ## Testing our lexer
 * `go test ./lexer/`
 * `go test ./ast/`
