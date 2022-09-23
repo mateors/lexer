@@ -200,6 +200,10 @@ Eval will take an `ast.Node` as input and return an `object.Object`.
 ## Environment
 > the environment is a hash map that associates strings with objects.
 
+## Functions
+1. Define an internal representation of functions in our object system 
+2. Add support for function calls to Eval.
+
 ## Testing our lexer
 * `go test ./lexer/`
 * `go test ./ast/`
