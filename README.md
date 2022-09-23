@@ -197,6 +197,9 @@ The design we are going to use is heavily inspired by the interpreter presented 
 
 Eval will take an `ast.Node` as input and return an `object.Object`.
 
+## Environment
+> the environment is a hash map that associates strings with objects.
+
 ## Testing our lexer
 * `go test ./lexer/`
 * `go test ./ast/`
