@@ -206,6 +206,8 @@ Eval will take an `ast.Node` as input and return an `object.Object`.
 
 > Extending the environment
 
+Closures are functions that “close over” the environment they were defined in. They carry their own environment around and whenever they’re called they can access it.
+
 ## Testing our lexer
 * `go test ./lexer/`
 * `go test ./ast/`
