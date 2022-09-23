@@ -5,7 +5,7 @@ import "fmt"
 type ObjectType string
 
 const (
-	INTEGAR_OBJ = "INTEGAR"
+	INTEGER_OBJ = "INTEGAR"
 	BOOLEAN_OBJ = "BOOLEAN"
 	NULL_OBJ    = "NULL"
 )
@@ -24,7 +24,7 @@ func (i *Integer) Inspect() string {
 }
 
 func (i *Integer) Type() ObjectType {
-	return INTEGAR_OBJ
+	return INTEGER_OBJ
 }
 
 type Boolean struct {
