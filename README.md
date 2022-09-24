@@ -220,7 +220,8 @@ In short: keep track of object allocations and references to objects, make enoug
 ### system calls
 > Talking to the kernel is normally done via something called system calls.
 
-
+### Array
+elements in an array literal can be any type of expression. Integer literals, function literals, infix or prefix expressions.
 
 ## Testing our lexer
 * `go test ./lexer/`
