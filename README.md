@@ -223,6 +223,16 @@ In short: keep track of object allocations and references to objects, make enoug
 ### Array
 elements in an array literal can be any type of expression. Integer literals, function literals, infix or prefix expressions.
 
+### Index operator expressions
+* myArray[0];
+* [1, 2, 3, 4][2];
+* let myArray = [1, 2, 3, 4]; myArray[2];
+* myArray[2 + 1];
+* returnsArray()[1];
+
+### Basic Structure of Array expression
+> `<expression>[<expression>]`
+
 ## Testing our lexer
 * `go test ./lexer/`
 * `go test ./ast/`
