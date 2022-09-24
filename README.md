@@ -236,6 +236,11 @@ elements in an array literal can be any type of expression. Integer literals, fu
 ### Array Index 
 It can be any expression. Syntactically it doesn’t make a difference which one it is, but semantically it has to produce an integer.
 
+## Parsing Hash Literals
+
+### Basic syntactic structure of a hash literal:
+> `{<expression> : <expression>, <expression> : <expression>, ... }`
+
 ## Testing our lexer
 * `go test ./lexer/`
 * `go test ./ast/`
