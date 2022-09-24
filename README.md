@@ -208,6 +208,15 @@ Eval will take an `ast.Node` as input and return an `object.Object`.
 
 Closures are functions that “close over” the environment they were defined in. They carry their own environment around and whenever they’re called they can access it.
 
+## Higher-order functions
+Higher-order functions are functions that either return other functions or receive them as arguments.
+
+## Garbage collection (GC)
+In short: keep track of object allocations and references to objects, make enough memory available for future object allocations and give memory back when it’s not needed anymore. This last point is what garbage collection is all about. Without it the programs would “leak” and finally run out of memory
+
+### mark and sweep algorithm.
+> allocating and freeing memory
+
 ## Testing our lexer
 * `go test ./lexer/`
 * `go test ./ast/`
