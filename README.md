@@ -217,6 +217,11 @@ In short: keep track of object allocations and references to objects, make enoug
 ### mark and sweep algorithm.
 > allocating and freeing memory
 
+### system calls
+> Talking to the kernel is normally done via something called system calls.
+
+
+
 ## Testing our lexer
 * `go test ./lexer/`
 * `go test ./ast/`
