@@ -225,13 +225,16 @@ elements in an array literal can be any type of expression. Integer literals, fu
 
 ### Index operator expressions
 * myArray[0];
-* [1, 2, 3, 4][2];
-* let myArray = [1, 2, 3, 4]; myArray[2];
+* [1, 2, 3, 4][2]; //array literal
+* let myArray = [1, 2, 3, 4]; myArray[2]; //an identifier
 * myArray[2 + 1];
-* returnsArray()[1];
+* returnsArray()[1]; //function cal
 
 ### Basic Structure of Array expression
 > `<expression>[<expression>]`
+
+### Array Index 
+It can be any expression. Syntactically it doesn’t make a difference which one it is, but semantically it has to produce an integer.
 
 ## Testing our lexer
 * `go test ./lexer/`
