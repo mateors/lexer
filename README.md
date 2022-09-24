@@ -247,3 +247,8 @@ It can be any expression. Syntactically it doesn’t make a difference which one
 * `go test ./parser/`
 * `go test -run TestOperatorPrecedenceParsing ./parser/`
 * `go test -v -run TestOperatorPrecedenceParsing2 ./parser/`
+
+## Books Need to Study
+* http://www.duntemann.com/assembly.html
+* http://peter.michaux.ca/articles/scheme-from-scratch-introduction
+* https://lisperator.net/pltut/
