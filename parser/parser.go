@@ -2,10 +2,11 @@ package parser
 
 import (
 	"fmt"
-	"mastercode/ast"
-	"mastercode/lexer"
-	"mastercode/token"
 	"strconv"
+
+	"github.com/mateors/lexer/ast"
+	"github.com/mateors/lexer/lexer"
+	"github.com/mateors/lexer/token"
 )
 
 const (

@@ -1,9 +1,9 @@
 package evaluator
 
 import (
-	"mastercode/lexer"
-	"mastercode/object"
-	"mastercode/parser"
+	"github.com/mateors/lexer/lexer"
+	"github.com/mateors/lexer/object"
+	"github.com/mateors/lexer/parser"
 	"testing"
 )
 

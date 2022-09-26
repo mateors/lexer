@@ -2,7 +2,7 @@ package ast
 
 import (
 	"bytes"
-	"mastercode/token"
+	"github.com/mateors/lexer/token"
 	"strings"
 )
 

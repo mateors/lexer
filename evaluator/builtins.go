@@ -2,7 +2,7 @@ package evaluator
 
 import (
 	"fmt"
-	"mastercode/object"
+	"github.com/mateors/lexer/object"
 )
 
 var builtins = map[string]*object.Builtin{

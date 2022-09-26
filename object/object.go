@@ -4,8 +4,9 @@ import (
 	"bytes"
 	"fmt"
 	"hash/fnv"
-	"mastercode/ast"
 	"strings"
+
+	"github.com/mateors/lexer/ast"
 )
 
 type ObjectType string

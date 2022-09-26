@@ -248,6 +248,20 @@ It can be any expression. Syntactically it doesn’t make a difference which one
 * `go test -run TestOperatorPrecedenceParsing ./parser/`
 * `go test -v -run TestOperatorPrecedenceParsing2 ./parser/`
 
+
+## Supportd features of our interpreter.
+* integers
+* booleans
+* strings
+* arrays
+* hashes
+* prefix-, infix- and index operators
+* conditionals
+* global and local bindings
+* first-class functions
+* return statements
+* closures
+
 ## Books Need to Study
 * http://www.duntemann.com/assembly.html
 * http://peter.michaux.ca/articles/scheme-from-scratch-introduction

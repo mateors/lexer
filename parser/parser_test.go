@@ -2,9 +2,10 @@ package parser
 
 import (
 	"fmt"
-	"mastercode/ast"
-	"mastercode/lexer"
 	"testing"
+
+	"github.com/mateors/lexer/ast"
+	"github.com/mateors/lexer/lexer"
 )
 
 // -1 * 2 + 3

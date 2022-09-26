@@ -1,7 +1,7 @@
 package ast
 
 import (
-	"mastercode/token"
+	"github.com/mateors/lexer/token"
 	"testing"
 )
 

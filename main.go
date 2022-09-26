@@ -3,12 +3,13 @@ package main
 import (
 	"fmt"
 	"log"
-	"mastercode/lexer"
-	"mastercode/parser"
-	"mastercode/repl"
-	"mastercode/token"
 	"os"
 	"os/user"
+
+	"github.com/mateors/lexer/lexer"
+	"github.com/mateors/lexer/parser"
+	"github.com/mateors/lexer/repl"
+	"github.com/mateors/lexer/token"
 )
 
 func lexerManualTest() {

@@ -1,8 +1,9 @@
 package lexer
 
 import (
-	"mastercode/token"
 	"testing"
+
+	"github.com/mateors/lexer/token"
 )
 
 func TestNextToken(t *testing.T) {

@@ -2,8 +2,9 @@ package evaluator
 
 import (
 	"fmt"
-	"mastercode/ast"
-	"mastercode/object"
+
+	"github.com/mateors/lexer/ast"
+	"github.com/mateors/lexer/object"
 )
 
 var (

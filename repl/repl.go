@@ -4,10 +4,11 @@ import (
 	"bufio"
 	"fmt"
 	"io"
-	"mastercode/evaluator"
-	"mastercode/lexer"
-	"mastercode/object"
-	"mastercode/parser"
+
+	"github.com/mateors/lexer/evaluator"
+	"github.com/mateors/lexer/lexer"
+	"github.com/mateors/lexer/object"
+	"github.com/mateors/lexer/parser"
 )
 
 //REPL = Read Eval Print Loop

@@ -1,6 +1,6 @@
 package lexer
 
-import "mastercode/token"
+import "github.com/mateors/lexer/token"
 
 type Lexer struct {
 	input        string
