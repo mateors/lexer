@@ -1,6 +1,6 @@
-# lexer
+# Interpreter from scratch
 
-I truly wanted to understand how interpreters work and that included understanding how lexers and parsers work.
+I truly wanted to understand how interpreters work and that included understanding how `lexers` and `parsers` work.
 
 ## What is an interpreter?
 Interpreter: take source code and evaluate it.
@@ -12,11 +12,131 @@ We build a tree-walking interpreter.
 
 We're going to build our own **lexer**, our own parser, our own tree representation and our own evaluator. We'll see what **tokens** are, what an abstract syntax tree is, how to build such a tree, how to evaluate it and how to extend our language with new data structures and built-in functions.
 
+Parsing is one of the most well-understood branches of computer science and really smart people have already invested a lot of time into the problems of parsing. The results of their work are CFG, BNF, EBNF, parser generators and advanced parsing techniques used in them. Why shouldn’t you take advantage of that?
+
+### Writing your own parser is not a waste of time rather immensely valuable.
+
+We are here to learn, we want to understand how parsers work. And it’s my opinion that the best way to do that is by getting our hands dirty and writing a parser ourselves. Also, I think it’s immense fun.
 
 ## Why its important?
 Without a compiler or an interpreter a programming language is nothing more than an idea or a specification.
 
+## Terminology
+
+### A special type of functions | Higher order functions
+> Higher order functions: These are functions that take other functions as arguments.
+
+### First class functions
+> A function act like a values, like integars or strings.
+
+### REPL |  Read–Eval–Print Loop
+> REPL: A read–eval–print loop (REPL), also termed an interactive toplevel or language shell, is a simple interactive computer programming environment that takes single user inputs, executes them, and returns the result to the user; a program written in a REPL environment is executed piecewise.
+
+## Lexing
+> to work with source code we need to turn it into a more accessible form.
+
+> We're going to write our own lexer. It will take source code as input and output the tokens that represent the source code. It will go through its input and output the next token it recognizes.
+
+### AST
+> Internal representation of the code called abstract syntax tree (AST)
+
+> Data structure used for the internal representation of the source code
+
+### WHAT IS PARSER?
+> A parser is a software component that takes input data (frequently text) and builds a data structure – often some kind of parse tree, abstract syntax tree or other hierarchical structure – giving a structural representation of the input, checking for correct syntax in the process
+
+* Takes input
+* Builds data structure ( Parse tree | Abstract syntax tree | Hirerchical structure)
+* Checking for correct syntax.
+
+``` In one words Parser is Structural representation of its input.``
+
+A parser turns its input into a data structure that represents the input.
+
+
+## Goal of our project
+The focus of this book is the interpreter we are writing - the ideas and concepts behind it and its implementation
+
+> It will tokenize and parse our source code in a REPL, building up an internal representation of the code called abstract syntax tree and then evaluate this tree. 
+
+It will have a few major parts:
+* the lexer
+* the parser
+* the Abstract Syntax Tree (AST)
+* the internal object system
+* the evaluator
+
+```source_code -> Tokens -> Abstract Syntax Tree / AST```
+
+### The First transformation:
+> From source code to tokens, is called `"lexical analysis"` or lexing for short. Its called `lexer` (also called tokenizer or scanner)
+
+### The Second transformation:
+> Turns the tokens into an `"Abstract Syntax Tree"`
+
+## Strategies
+There are two main strategies when parsing a programming language: top-down parsing or bottom-up parsing.
+
+Top-down parsing:
+1. Recursive descent parsing
+2. Early parsing
+3. Predictive parsing
+
+> The parser we are going to write is a recursive descent parser.
+
+And in particular, it's a "top down operator precedence" parser, sometimes called "Pratt parser", after its inventor Vaughan Pratt.
+
+## Pratt Parsing
+* [Simple-but-powerful-pratt-parsing](https://matklad.github.io/2020/04/13/simple-but-powerful-pratt-parsing.html)
+* [Parsing-made-easy](https://journal.stuffwithstuff.com/2011/03/19/pratt-parsers-expression-parsing-made-easy)
+* [Recursive-descent-and-pratt-parsing](https://chidiwilliams.com/post/on-recursive-descent-and-pratt-parsing)
+* [Handwritten a Parser](https://segmentfault.com/a/1190000041457544/en)
+
+*"Pratt Parsing is very simple to understand, trivial to implement, easy to use, extremely effcient in practice if not in theory, yet flexible enough to meet most reasonable syntactic needs of users"*
+
+Top Down Operator Precedence Parsing, or Pratt parsing, was invented as `an alternative to parsers` based on context-free grammars and the Backus-Naur-Form.
+
+And that is also the `main difference`: instead of associating parsing functions with `grammar rules (defined in BNF or EBNF)`, Pratt associates these functions (which he calls `"semantic code"`) with single token types.
+
+A crucial part of this idea is that each token type can have two parsing functions associated with it, depending on the token's position - `infix` or `prefix`.
+
+* The first thing we need to do for expression parsing is to prepare our AST.
+
+> Let statement -> `let x = 5 + 5;`
+
+> Expression statement -> `x + 5;`
+
+
+## Implementing the Pratt Parser
+A Pratt parser’s main idea is the association of parsing functions *(which Pratt calls "semantic code")* with token types.
+
+Each token type can have up to two parsing functions associated with it, depending on whether the token is found in a prefix or an infix position.
+
+
+## Statement
+> a statement is a single line of code that performs a specific task. 
+
+## let statement structure
+> let statements - of the following form:
+```let <identifier> = <expression>;```
+
+```
+lex x = 5; //let statement
+
+     <let>
+LEFT <->  RIGHT
+x	  5
+``` 
+
+> The difference between `statements` and `expressions` are needed. Expressions produce values, statements don’t.
+
+### Expressions produce values, statements don't
+
+
 ## Parsing Expressions
+Parsing expressions is the most interesting part of writing a parser. As we just saw, parsing statements is relatively straightforward. We process tokens from `left to right`, expect or reject the next tokens and if everything fits we return an `AST node`.
+
+Parsing expressions, on the other hand, contains a few more challenges. `Operator precedence` is probably the first one that comes to mind and is best illustrated with an example.
 
  ### Prefix operators
  A prefix operator is an operator "in front of" its operand.
@@ -50,32 +170,6 @@ Without a compiler or an interpreter a programming language is nothing more than
 ## if expressions
 * `let result = if (10 > 5) { true } else { false };`
 * `result // => true`
-
-## Pratt Parsing
-* [Simple-but-powerful-pratt-parsing](https://matklad.github.io/2020/04/13/simple-but-powerful-pratt-parsing.html)
-* [Parsing-made-easy](https://journal.stuffwithstuff.com/2011/03/19/pratt-parsers-expression-parsing-made-easy)
-* [Recursive-descent-and-pratt-parsing](https://chidiwilliams.com/post/on-recursive-descent-and-pratt-parsing)
-* [Handwritten a Parser](https://segmentfault.com/a/1190000041457544/en)
-
-*"Pratt Parsing is very simple to understand, trivial to implement, easy to use, extremely effcient in practice if not in theory, yet flexible enough to meet most reasonable syntactic needs of users"*
-
-Top Down Operator Precedence Parsing, or Pratt parsing, was invented as `an alternative to parsers` based on context-free grammars and the Backus-Naur-Form.
-
-And that is also the `main difference`: instead of associating parsing functions with `grammar rules (defined in BNF or EBNF)`, Pratt associates these functions (which he calls `"semantic code"`) with single token types.
-
-A crucial part of this idea is that each token type can have two parsing functions associated with it, depending on the token's position - `infix` or `prefix`.
-
-* The first thing we need to do for expression parsing is to prepare our AST.
-
-> Let statement -> `let x = 5 + 5;`
-
-> Expression statement -> `x + 5;`
-
-
-## Implementing the Pratt Parser
-A Pratt parser’s main idea is the association of parsing functions *(which Pratt calls "semantic code")* with token types.
-
-Each token type can have up to two parsing functions associated with it, depending on whether the token is found in a prefix or an infix position.
 
 ## Prefix operator syntax
 > `<prefix operator><expression>;`
