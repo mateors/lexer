@@ -128,9 +128,8 @@ LEFT <->  RIGHT
 x	  5
 ``` 
 
-> The difference between `statements` and `expressions` are needed. Expressions produce values, statements don’t.
-
-### Expressions produce values, statements don't
+### The difference between `statements` and `expressions` 
+> `Expressions produce values, statements don't`
 
 
 ## Parsing Expressions
