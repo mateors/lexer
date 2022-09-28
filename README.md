@@ -265,7 +265,7 @@ That's all we need to keep in mind when defining the AST node:
 ## Evaluation
 A treewalking interpreter that recursively evaluates an AST is probably the slowest of all approaches, but easy to build, extend, reason about and as portable as the language it’s implemented in.
 
-An interpreter that compiles to bytecode and uses a virtual machine to evaluate said bytecode is going to be a lot faster. But more complicated and harder to build, too.
+An interpreter that compiles to bytecode and uses a virtual machine to evaluate said bytecode is going to be a lot faster. But more complicated and harder to build, too. [Checkout our compiler](https://github.com/mateors/compiler)
 
 ## A Tree-Walking Interpreter
 > Executing the AST while traversing it. 
