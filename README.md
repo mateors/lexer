@@ -8,14 +8,13 @@ Interpreter: take source code and evaluate it.
 > Interpreters that parse the source code, build an *abstract syntax tree (AST)* out of it and then evaluate this tree. This type of interpreter is sometimes called “tree-walking” interpreter, because it “walks” the AST and interprets it.
 
 ## What we want?
-We build a tree-walking interpreter.
+> We build a tree-walking interpreter.
 
-We're going to build our own **lexer**, our own parser, our own tree representation and our own evaluator. We'll see what **tokens** are, what an abstract syntax tree is, how to build such a tree, how to evaluate it and how to extend our language with new data structures and built-in functions.
+We're going to build our own **lexer**, our own **parser**, our own tree representation and our own evaluator. We'll see what **tokens** are, what an `abstract syntax tree` is, `how to build such a tree`, `how to evaluate it` and how to extend our language with new data structures and built-in functions.
 
-Parsing is one of the most well-understood branches of computer science and really smart people have already invested a lot of time into the problems of parsing. The results of their work are CFG, BNF, EBNF, parser generators and advanced parsing techniques used in them. Why shouldn’t you take advantage of that?
+> Parsing is one of the most well-understood branches of `computer science` and really smart people have already invested a lot of time into the problems of parsing. The results of their work are CFG, `BNF`, `EBNF`, `parser generators` and advanced parsing techniques used in them. Why shouldn't you take advantage of that?
 
 ### Writing your own parser is not a waste of time rather immensely valuable.
-
 We are here to learn, we want to understand how parsers work. And it’s my opinion that the best way to do that is by getting our hands dirty and writing a parser ourselves. Also, I think it’s immense fun.
 
 ## Why its important?
@@ -32,8 +31,8 @@ Without a compiler or an interpreter a programming language is nothing more than
 ### REPL |  Read–Eval–Print Loop
 > REPL: A read–eval–print loop (REPL), also termed an interactive toplevel or language shell, is a simple interactive computer programming environment that takes single user inputs, executes them, and returns the result to the user; a program written in a REPL environment is executed piecewise.
 
-## Lexing
-> to work with source code we need to turn it into a more accessible form.
+### Lexing
+> To work with source code we need to turn it into a more accessible form.
 
 > We're going to write our own lexer. It will take source code as input and output the tokens that represent the source code. It will go through its input and output the next token it recognizes.
 
@@ -51,13 +50,13 @@ Without a compiler or an interpreter a programming language is nothing more than
 
 ```In one words Parser is Structural representation of its input.```
 
-A parser turns its input into a data structure that represents the input.
+> A parser turns its input into a data structure that represents the input.
 
 
 ## Goal of our project
-The focus of this book is the interpreter we are writing - the ideas and concepts behind it and its implementation
+The focus of this book is the `interpreter we are writing` - the ideas and concepts behind it and its implementation
 
-> It will tokenize and parse our source code in a REPL, building up an internal representation of the code called abstract syntax tree and then evaluate this tree. 
+> It will `tokenize` and `parse` our `source code` in a REPL, building up an `internal representation of the code` called `abstract syntax tree` and then `evaluate` this tree. 
 
 It will have a few major parts:
 * the lexer
