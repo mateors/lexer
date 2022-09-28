@@ -15,10 +15,10 @@ We're going to build our own **lexer**, our own **parser**, our own tree represe
 > Parsing is one of the most well-understood branches of `computer science` and really smart people have already invested a lot of time into the problems of parsing. The results of their work are CFG, `BNF`, `EBNF`, `parser generators` and advanced parsing techniques used in them. Why shouldn't you take advantage of that?
 
 ### Writing your own parser is not a waste of time rather immensely valuable.
-We are here to learn, we want to understand how parsers work. And it’s my opinion that the best way to do that is by getting our hands dirty and writing a parser ourselves. Also, I think it’s immense fun.
+We are here to learn, we want to understand `how parsers work`. And it's my opinion that `the best way to do that is by getting our hands dirty` and `writing a parser ourselves`. Also, I think it's immense fun.
 
-## Why its important?
-Without a compiler or an interpreter a programming language is nothing more than an idea or a specification.
+## Why it is important?
+Without a [compiler](https://github.com/mateors/compiler) or an `interpreter` a programming language is nothing more than an idea or a specification.
 
 ## Terminology
 
