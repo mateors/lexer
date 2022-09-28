@@ -49,7 +49,7 @@ Without a compiler or an interpreter a programming language is nothing more than
 * Builds data structure ( Parse tree | Abstract syntax tree | Hirerchical structure)
 * Checking for correct syntax.
 
-``` In one words Parser is Structural representation of its input.``
+```In one words Parser is Structural representation of its input.```
 
 A parser turns its input into a data structure that represents the input.
 
