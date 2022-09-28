@@ -84,7 +84,7 @@ Top-down parsing:
 
 > The parser we are going to write is a recursive descent parser.
 
-And in particular, it's a "top down operator precedence" parser, sometimes called "Pratt parser", after its inventor Vaughan Pratt.
+And in particular, it's a `top down operator precedence` parser, sometimes called "`Pratt parser`", after its `inventor Vaughan Pratt`.
 
 ## Pratt Parsing
 * [Simple-but-powerful-pratt-parsing](https://matklad.github.io/2020/04/13/simple-but-powerful-pratt-parsing.html)
@@ -116,8 +116,8 @@ Each token type can have up to two parsing functions associated with it, dependi
 ## Statement
 > a statement is a single line of code that performs a specific task. 
 
-## let statement structure
-> let statements - of the following form:
+## Let statement structure
+> Let statement - of the following form:
 ```let <identifier> = <expression>;```
 
 ```
@@ -138,7 +138,7 @@ Parsing expressions is the most interesting part of writing a parser. As we just
 Parsing expressions, on the other hand, contains a few more challenges. `Operator precedence` is probably the first one that comes to mind and is best illustrated with an example.
 
  ### Prefix operators
- A prefix operator is an operator "in front of" its operand.
+ > A prefix operator is an operator "in front of" its operand.
  * -5
  * !true
  * !false
@@ -147,7 +147,7 @@ Parsing expressions, on the other hand, contains a few more challenges. `Operato
  A postfix operator is an operator "after" its operand
 
  ### Infix operators (or "binary operators")
- An infix operator sits between its operands
+ > An infix operator sits between its operands
  * 5 + 5
  * 5 - 5
  * 5 / 5
@@ -166,7 +166,7 @@ Parsing expressions, on the other hand, contains a few more challenges. `Operato
 * foo * bar / foobar
 * add(foo, bar)
 
-## if expressions
+## IF expressions
 * `let result = if (10 > 5) { true } else { false };`
 * `result // => true`
 
@@ -193,7 +193,7 @@ Parsing expressions, on the other hand, contains a few more challenges. `Operato
 
 ![parse 4](./screens/parse_4.png)
 
-### when parsing the expression statement `-1 * 2 + 3`
+### When parsing the expression statement `-1 * 2 + 3`
 
 ```
 BEGIN parseExpressionStatement
@@ -223,7 +223,7 @@ END parseExpressionStatement
 ## Block statements 
 Block statements are a series of statements enclosed by an opening `{` and a closing `}`
 
-## if-else conditional statement structure
+## IF-ELSE conditional statement structure
 > `if (<condition>) <consequence> else <alternative>`
 
 > *parsing is prone to off-by-one errors*
@@ -253,14 +253,14 @@ return foobar + barfoo;
 }
 ```
 
-### the two main parts of a function literals
+### The two main parts of a function literals
 1. The list of parameters 
 2. The block statement that is the function's body. 
 
-That’s all we need to keep in mind when defining the AST node:
+That's all we need to keep in mind when defining the AST node:
 
 ## Call Expressions structure
-* `<expression>( <comma separated expressions> )`
+> `<expression>( <comma separated expressions> )`
 
 ## Evaluation
 A treewalking interpreter that recursively evaluates an AST is probably the slowest of all approaches, but easy to build, extend, reason about and as portable as the language it’s implemented in.
@@ -314,7 +314,7 @@ In short: keep track of object allocations and references to objects, make enoug
 > Talking to the kernel is normally done via something called system calls.
 
 ### Array
-elements in an array literal can be any type of expression. Integer literals, function literals, infix or prefix expressions.
+> Elements in an array literal can be any type of expression. Integer literals, function literals, infix or prefix expressions.
 
 ### Index operator expressions
 * myArray[0];
